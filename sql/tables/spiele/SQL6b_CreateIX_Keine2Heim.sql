@@ -1,0 +1,11 @@
+USE [Bundesliga]
+GO
+
+/****** Object:  Index [Keine2HeimspieleSelbenTag]    Script Date: 25.04.2024 19:57:15 ******/
+CREATE UNIQUE NONCLUSTERED INDEX [Keine2HeimspieleSelbenTag] ON [dbo].[tb_Begegnung]
+(
+	[HeimID] ASC,
+	[Spieltag] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
