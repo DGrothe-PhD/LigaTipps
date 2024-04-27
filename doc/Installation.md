@@ -13,5 +13,5 @@ Schritt 3, 6, 8 ist optional, die Datenbank funktioniert auch als reine Ergebnis
 
 # Unerledigte Funktionen
 
-2. Tippfunktionalität implementieren: Punkte für Bedingungen (richtige Differenz usw.)
-3. Tipperpunkte automatisch ausrechnen und zusammenfassen lassen (Trigger)
+1. Tippfunktionalität implementieren: Punkte für Bedingungen (richtige Differenz usw.)
+2. Tipperpunkte automatisch ausrechnen und zusammenfassen lassen (Trigger)
