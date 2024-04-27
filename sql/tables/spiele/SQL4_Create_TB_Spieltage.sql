@@ -1,7 +1,7 @@
 USE [Bundesliga]
 GO
 
-/****** Object:  Table [dbo].[tb_Spieltage]    Script Date: 05.03.2023 19:22:07 ******/
+/****** Object:  Table [dbo].[tb_Spieltage]    Script Date: 27.04.2024 19:08:35 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[tb_Spieltage](
  CONSTRAINT [PK_tb_Spieltage] PRIMARY KEY CLUSTERED 
 (
 	[SpieltagID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
