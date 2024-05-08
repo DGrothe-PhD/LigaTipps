@@ -10,10 +10,14 @@ DECLARE @Erfolg bit;
 DECLARE @Feedback varchar(max);
 DECLARE @TestResult varchar(max);
 
+DECLARE @Test_Spieltag int = 3;
+-- this is for testing purposes only.
+-- A separate entry for the test matches avoids double key conflicts.
+
 -- Tests
 SET @TestName = 'Test 1: Not existing team'
 EXECUTE @RC = [dbo].[pr_BegegnungEintragen] 
-   3
+   @Test_Spieltag
    , '04.05.1911'
    , '15:30'
    , 'xyz123'
@@ -29,7 +33,7 @@ PRINT @TestResult;
 SET @TestName = 'Test 2: Successful entry '
 SET @Feedback = '_empty_'
 EXECUTE @RC = [dbo].[pr_BegegnungEintragen] 
-   3
+   @Test_Spieltag
    , '01.01.1911'
    , '01:11'
    , 'RB Leipzig'
@@ -46,7 +50,7 @@ PRINT @TestResult;
 
 SET @TestName = 'Test 3: Ambiguous string'
 EXECUTE @RC = [dbo].[pr_BegegnungEintragen] 
-   3
+   @Test_Spieltag
    , '11.01.1911'
    , '15:30'
    , 'burg'-- should be ambiguous
