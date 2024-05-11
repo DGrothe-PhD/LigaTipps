@@ -42,7 +42,7 @@ BEGIN
 	SET @num = 0;
 	SELECT @num +=1, @HeimID = TeamID, @unn = CONCAT_WS(', ', @unn, Team)
 	FROM dbo.tb_Team
-	WHERE CHARINDEX(@Heim, Team) > 0
+	WHERE CHARINDEX(LOWER(@Heim), LOWER(Team)) > 0
 
 	-- Check if @Heim is unambiguous
 	IF ISNULL(@num, 0) = 0
@@ -60,7 +60,7 @@ BEGIN
 	SET @num = 0;
 	SELECT @num += 1, @AuswaertsID = TeamID, @unn = CONCAT_WS(', ', @unn, Team)
 	FROM tb_Team
-	WHERE CHARINDEX(@Gegner, Team) > 0
+	WHERE CHARINDEX(LOWER(@Gegner), LOWER(Team)) > 0
 
 	IF ISNULL(@num, 0) = 0
 	BEGIN

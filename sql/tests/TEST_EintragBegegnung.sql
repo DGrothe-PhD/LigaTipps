@@ -36,7 +36,7 @@ EXECUTE @RC = [dbo].[pr_BegegnungEintragen]
    @Test_Spieltag
    , '01.01.1911'
    , '01:11'
-   , 'RB Leipzig'
+   , 'rb LeiPzig'
    , 'Stuttgart'
    , @Erfolg OUTPUT
    , @Feedback OUTPUT -- Fehlermeldungen etc.
