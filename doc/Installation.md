@@ -16,7 +16,9 @@ Für 2024/25 sind bereits alle Spieltage und teilnehmenden Vereine angelegt, nic
 Installation geht folgendermaßen:
 1. Sicherstellen, dass es einen Pfad `C:\SQL-Kurs\DB\Bundesliga\` gibt bzw. diesen anlegen.
 2. Falls dort, etwa vom Vorjahr, noch eine Datenbank liegen sollte, diese über SQL Server Management Studio (SSMS) von Hand löschen.
-3. Im Verzeichnis `sql/` liegt ein Masterskript für die nächste Bundesligasaison.
+3. Im Verzeichnis `sql/` liegt ein Masterskript für die nächste Bundesligasaison. \
+   Dieses in SSMS ausführen und fertig.
+4. Was noch nicht eingetragen ist, dann manuell eintragen (derzeit geht das am besten per Eingabeprozedur).
    
 # Unerledigte Funktionen
 
