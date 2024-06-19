@@ -1,15 +1,19 @@
-USE Bundesliga;
+USE [Bundesliga]
 GO
+
+/****** Object:  Trigger [dbo].[tr_TeamPoints]    Script Date: 19.06.2024 11:07:07 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE OR ALTER TRIGGER [dbo].[tr_TeamPoints] 
+CREATE OR ALTER   TRIGGER [dbo].[tr_TeamPoints] 
    ON  [dbo].[tb_Begegnung]
    AFTER UPDATE
 AS 
@@ -35,8 +39,8 @@ BEGIN
 	
 	------ PART 1 --------------------
 	-- Gather host team's score before this match
-	SELECT @TeamTore = Tore,      @TeamGegentore = Gegentore,
-	       @TeamPunkte = Punkte,  @TeamAnzahlSpiele = AnzahlSpiele
+	SELECT @TeamTore = ISNULL(Tore,0),      @TeamGegentore = ISNULL(Gegentore,0),
+	       @TeamPunkte = ISNULL(Punkte,0),  @TeamAnzahlSpiele = ISNULL(AnzahlSpiele,0)
 	FROM [dbo].[tb_Team]
 	WHERE TeamID = @HeimID;
 
@@ -59,8 +63,8 @@ BEGIN
 
 	------ PART 2 --------------------
     -- Gather guest team's score before this match
-	SELECT @TeamTore = Tore,      @TeamGegentore = Gegentore,
-	       @TeamPunkte = Punkte,  @TeamAnzahlSpiele = AnzahlSpiele
+	SELECT @TeamTore = ISNULL(Tore,0),      @TeamGegentore = ISNULL(Gegentore,0),
+	       @TeamPunkte = ISNULL(Punkte,0),  @TeamAnzahlSpiele = ISNULL(AnzahlSpiele,0)
 	FROM [dbo].[tb_Team]
 	WHERE TeamID = @AuswaertsID;
 
@@ -83,3 +87,8 @@ BEGIN
 
 END
 GO
+
+ALTER TABLE [dbo].[tb_Begegnung] ENABLE TRIGGER [tr_TeamPoints]
+GO
+
+
